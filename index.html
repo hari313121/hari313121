@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAFTAR BELANJAAN HARINFOOD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1><b>DAFTAR BELANJAAN HARINFOOD</b></h1>
+
+        <form id="shoppingForm">
+            <input type="text" id="itemName" placeholder="Nama Barang" required>
+            <input type="number" id="itemQuantity" placeholder="Jumlah" min="1" required>
+            <select id="itemUnit" required>
+                <option value="Pcs">Pcs</option>
+                <option value="Kg">Kg</option>
+                <option value="Rtg">Rtg</option>
+                <option value="L">L</option>
+            </select>
+            <button type="submit">Tambah ke Daftar</button>
+        </form>
+
+        <div id="shoppingListContainer">
+            <h2>Daftar Belanja</h2>
+            <ul id="shoppingList">
+                </ul>
+            <button id="clearListButton">Bersihkan Daftar</button>
+        </div>
+
+        <div class="actions">
+            <button id="printButton">Cetak Daftar</button>
+            <button id="whatsappButton">Kirim via WhatsApp</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
