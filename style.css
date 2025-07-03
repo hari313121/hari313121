@@ -1,0 +1,167 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%; /* Penting agar body mengisi seluruh tinggi viewport */
+    overflow-x: hidden; /* Mencegah scrollbar horizontal yang tidak diinginkan */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex; /* Menggunakan flexbox untuk penataan container */
+    justify-content: center; /* Pusatkan container secara horizontal */
+    align-items: flex-start; /* Posisikan container di bagian atas */
+    min-height: 100vh; /* Pastikan body setidaknya setinggi viewport */
+}
+
+.container {
+    background-color: #fff;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Mengisi lebar penuh */
+    max-width: 100%; /* Pastikan tidak melebihi 100% */
+    border-radius: 0; /* Menghilangkan border-radius untuk tepi tajam */
+    box-sizing: border-box; /* Memastikan padding tidak menambah lebar total */
+}
+
+/* Penyesuaian untuk tampilan elegan: */
+/* Anda bisa menambahkan padding horizontal pada body atau container jika ingin ada "ruang" di tepi */
+/* Atau, jika Anda ingin konten tetap memiliki batas maksimal agar tidak terlalu melebar di layar besar,
+   Anda bisa mengatur max-width pada elemen di dalam container, bukan pada container itu sendiri. */
+
+/* Contoh: Jika Anda ingin konten form dan daftar belanja tidak terlalu lebar di layar desktop besar,
+   Anda bisa membungkusnya dalam div lain di dalam container dan memberikan max-width pada div tersebut. */
+/* Misalnya, di HTML:
+   <div class="container">
+       <div class="content-wrapper">
+           </div>
+   </div>
+*/
+/* Dan di CSS:
+   .content-wrapper {
+       max-width: 800px; // Contoh lebar maksimal
+       margin: 0 auto; // Pusatkan
+   }
+*/
+
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr 0.5fr auto;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+form input, form select, form button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+form button {
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+form button:hover {
+    background-color: #218838;
+}
+
+#shoppingListContainer {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+#shoppingList {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+#shoppingList li {
+    background-color: #e9e9e9;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold; /* Memastikan teks tebal di web */
+}
+
+#shoppingList li span {
+    color: #555;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.actions button {
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    flex: 1; /* Membuat tombol mengambil ruang yang sama */
+    margin: 0 5px;
+}
+
+#printButton {
+    background-color: #007bff;
+    color: white;
+}
+
+#printButton:hover {
+    background-color: #0056b3;
+}
+
+#whatsappButton {
+    background-color: #25d366;
+    color: white;
+}
+
+#whatsappButton:hover {
+    background-color: #1da851;
+}
+
+#clearListButton {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+    display: block; /* Agar tombol berada di baris baru */
+    margin: 10px auto; /* Tengahkan tombol */
+}
+
+#clearListButton:hover {
+    background-color: #c82333;
+}
+
+/* Media Queries untuk Responsif */
+@media (max-width: 600px) {
+    form {
+        grid-template-columns: 1fr; /* Stack elements on small screens */
+    }
+    .actions {
+        flex-direction: column;
+    }
+    .actions button {
+        margin: 5px 0;
+    }
+}
